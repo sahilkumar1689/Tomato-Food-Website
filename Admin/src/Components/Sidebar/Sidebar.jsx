@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { assets } from "../../Assets/assets";
 import "./Sidebar.css";
 import React from "react";
@@ -24,4 +25,4 @@ function Sidebar() {
   );
 }
 
-export default Sidebar;
+export default memo(Sidebar);

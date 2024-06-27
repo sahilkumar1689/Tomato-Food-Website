@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import { assets } from "../../Assets/assets";
+import { memo } from "react";
 
 function Navbar() {
   return (
@@ -11,4 +12,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default memo(Navbar);

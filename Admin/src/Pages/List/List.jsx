@@ -9,7 +9,9 @@ function List() {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get("/api/v1/listData");
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/listData`
+      );
       // console.log(response.data.data.lists);
       setList(response.data.data.lists);
       // toast.success("Data Fetch Successfully.");
@@ -19,11 +21,16 @@ function List() {
 
   const deleteItem = async (deleteId) => {
     // console.log(deleteId);
-    const response = await axios.post("/api/v1/deleteItem", { id: deleteId });
+    const response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v1/deleteItem`,
+      { id: deleteId }
+    );
     console.log(response.data);
     if (response?.data?.success) {
       toast.success(response.data.message);
-      const res = await axios.get("api/v1/listData");
+      const res = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/listData`
+      );
       setList(res.data.data.lists);
     } else toast.error("Something went wrong while deleting.");
   };

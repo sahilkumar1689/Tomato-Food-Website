@@ -36,7 +36,10 @@ function Add() {
     // console.log(formData);
 
     // Send the data:
-    const response = await axios.post("/api/v1/add", formData);
+    const response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v1/add`,
+      formData
+    );
     // console.log(response);
     // console.log(response.data.message);
     if (response.data.success) {

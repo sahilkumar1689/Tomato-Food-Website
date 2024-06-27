@@ -10,7 +10,9 @@ function Order() {
   const [allOrder, setOrder] = useState([]);
 
   const fetchAllOrders = async () => {
-    const response = await axios.get("/api/v4/getAllOrders");
+    const response = await axios.get(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v4/getAllOrders`
+    );
     // console.log(response.data.data);
     setOrder(response.data.data);
     // console.log(allOrder);
@@ -18,10 +20,13 @@ function Order() {
 
   const statusHandler = async (e, Id) => {
     // console.log(e.target.value, Id);
-    const response = await axios.post("/api/v4/updateStatus", {
-      orderId: Id,
-      status: e.target.value,
-    });
+    const response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v4/updateStatus`,
+      {
+        orderId: Id,
+        status: e.target.value,
+      }
+    );
 
     if (response.data.success) {
       toast.success("Staus Update Successfully.");
