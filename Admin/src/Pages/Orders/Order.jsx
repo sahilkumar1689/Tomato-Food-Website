@@ -29,8 +29,8 @@ function Order() {
     );
 
     if (response.data.success) {
-      toast.success("Staus Update Successfully.");
-      window.location.reload();
+      toast.success("Status Update Successfully.");
+      await fetchAllOrders();
     } else toast.error(response.data.message);
   };
 
