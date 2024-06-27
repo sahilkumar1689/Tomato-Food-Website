@@ -14,7 +14,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 */ 
 
 
-const frontendUrl = "https://tomato-food-website-frontend.onrender.com/";
+const frontendUrl = "https://tomato-food-website-frontend.onrender.com";
 
 
 // Placing Order:
