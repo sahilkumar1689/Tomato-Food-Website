@@ -9,10 +9,13 @@ function Payment() {
   const placePayment = async (choice) => {
     // console.log(choice);
 
-    let response = await axios.post("/api/v4/OrderPayment", {
-      isVerified: choice,
-      orderId: odrId,
-    });
+    let response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v4/OrderPayment`,
+      {
+        isVerified: choice,
+        orderId: odrId,
+      }
+    );
 
     if (response.data.data.url) {
       window.location.replace(response.data.data.url);

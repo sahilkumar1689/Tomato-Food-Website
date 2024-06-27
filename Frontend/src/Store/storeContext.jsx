@@ -43,7 +43,7 @@ function StoreProvider({ children }) {
     }
     if (tkn) {
       const response = await axios.post(
-        "/api/v3/addToCart",
+        `${import.meta.env.VITE_BACKEND_URL}/api/v3/addToCart`,
         { itemId },
         { headers: { token: tkn } }
       );
@@ -55,7 +55,7 @@ function StoreProvider({ children }) {
     setCartCount((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
     if (tkn) {
       const response = await axios.post(
-        "/api/v3/deleteFromCart",
+        `${import.meta.env.VITE_BACKEND_URL}/api/v3/deleteFromCart`,
         { itemId },
         { headers: { token: tkn } }
       );
@@ -94,7 +94,9 @@ function StoreProvider({ children }) {
   useEffect(() => {
     // Get the food list from the backend:
     (async () => {
-      const response = await axios.get("/api/v1/listData");
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/listData`
+      );
       // console.log(response.data.data.lists);
       setOriginalList(response.data.data.lists);
     })();
@@ -105,9 +107,12 @@ function StoreProvider({ children }) {
 
       let curTkn = localStorage.getItem("token");
       (async () => {
-        const response = await axios.get("/api/v3/getCart", {
-          headers: { token: curTkn },
-        });
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/v3/getCart`,
+          {
+            headers: { token: curTkn },
+          }
+        );
         // console.log(response.data.data.cartData);
         setCartCount(response.data.data.cartData);
       })();

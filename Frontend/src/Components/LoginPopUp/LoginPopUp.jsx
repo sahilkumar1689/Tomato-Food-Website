@@ -24,9 +24,15 @@ function LoginPopUp({ setLogin }) {
     let response;
 
     if (currState == "SignUp") {
-      response = await axios.post("/api/v2/register", userData);
+      response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v2/register`,
+        userData
+      );
     } else {
-      response = await axios.post("/api/v2/login", userData);
+      response = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v2/login`,
+        userData
+      );
     }
 
     if (response.data.success) {
@@ -39,9 +45,12 @@ function LoginPopUp({ setLogin }) {
       // Fetch cart data from the database:
       let curTkn = localStorage.getItem("token");
       (async () => {
-        const response = await axios.get("/api/v3/getCart", {
-          headers: { token: curTkn },
-        });
+        const response = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/v3/getCart`,
+          {
+            headers: { token: curTkn },
+          }
+        );
         // console.log(response.data.data.cartData);
         setCartCount(response.data.data.cartData);
       })();

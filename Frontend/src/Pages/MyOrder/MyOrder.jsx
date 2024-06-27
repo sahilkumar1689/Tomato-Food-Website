@@ -10,9 +10,12 @@ function MyOrder() {
   const [allOrder, setAllOrder] = useState([]);
 
   const fetchOrders = async () => {
-    const response = await axios.get("/api/v4/userOrder", {
-      headers: { token: tkn },
-    });
+    const response = await axios.get(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v4/userOrder`,
+      {
+        headers: { token: tkn },
+      }
+    );
     // console.log("before");
     // console.log(response.data.data);
     // console.log("After");

@@ -52,9 +52,13 @@ const Placeorder = () => {
     // console.log(orderData);
 
     // Store the order in the database:
-    let response = await axios.post("/api/v4/placeOrder", orderData, {
-      headers: { token: tkn },
-    });
+    let response = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/v4/placeOrder`,
+      orderData,
+      {
+        headers: { token: tkn },
+      }
+    );
 
     if (response.data.success) {
       setUserInfo({
