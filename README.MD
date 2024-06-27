@@ -74,3 +74,6 @@
 
 <h2>License</h2>
 <p>This project is licensed under the MIT License</p>
+
+<h2>Admin Pannel Link:</h2>
+<a href="https://tomato-food-website-adminpannel.onrender.com">Click Here:</a>
