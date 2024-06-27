@@ -1,0 +1,103 @@
+.header {
+  height: 34vw;
+  margin: 30px auto;
+  background: url("/header_img.webp") no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  position: relative;
+  /* border: 2px solid black; */
+}
+
+.headerContent {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 1.5vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 3s;
+}
+
+.headerContent h2 {
+  font-weight: 500;
+  color: white;
+  font-size: max(4.4vw, 22px);
+}
+
+.headerContent p {
+  color: white;
+  font-size: 1vw;
+}
+.headerContent .viewBtn {
+  border: none;
+  color: #747474;
+  font-weight: 500;
+  padding: 1vw 2.3vw;
+  background-color: white;
+  font-size: max(1vw, 13px);
+  border-radius: 16px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.viewBtn::before {
+  content: "";
+  position: absolute;
+  background-color: #ffba7a;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.8s;
+  border-radius: 16px;
+}
+
+.viewBtn:hover::before {
+  transform: scaleX(1);
+}
+
+.viewBtn:hover {
+  color: white;
+  box-shadow: 1px 1px 1px 1px #5f5f5f;
+}
+/* .headerContent button:hover {
+  background-color: #f0f0f0;
+} */
+
+/* Media Query: */
+@media screen and (max-width: 1050px) {
+  .headerContent {
+    max-width: 65%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .headerContent {
+    max-width: 65%;
+  }
+  .headerContent p {
+    display: none;
+  }
+  .headerContent button {
+    padding: 2vw 4vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header {
+    height: 42vw;
+  }
+}
+@media screen and (max-width: 380px) {
+  .headerContent h2 {
+    font-size: 19px;
+  }
+  .headerContent button {
+    padding: 1vw 2vw;
+    font-size: 10px;
+  }
+}

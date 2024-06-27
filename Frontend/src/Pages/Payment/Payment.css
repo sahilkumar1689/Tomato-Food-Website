@@ -1,0 +1,38 @@
+.paymentContainer {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin: 50px 0px;
+}
+
+.paymentContainer p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.paymentBtn {
+  display: flex;
+  gap: 50px;
+}
+
+.paymentBtn button {
+  font-size: 20px;
+  padding: 7px 36px;
+  background-color: #fc694fe3;
+  border: none;
+}
+
+.paymentBtn button:hover {
+  background-color: tomato;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .paymentBtn button {
+    font-size: 16px;
+    padding: 5px 25px;
+  }
+}

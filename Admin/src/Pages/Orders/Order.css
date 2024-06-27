@@ -1,0 +1,68 @@
+.emptyMessage {
+  text-align: center;
+  font-size: 30px;
+  margin: 100px;
+  opacity: 0.7;
+}
+
+.orderItems {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+  align-items: start;
+  gap: 30px;
+  border: 1px solid tomato;
+  padding: 20px;
+  margin: 30px 0px;
+  font-size: 14px;
+  color: #505050;
+}
+
+.orderItemsFood,
+.orderItemName {
+  font-weight: 600;
+}
+
+.orderItemName {
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+
+.orderItemAddress {
+  margin-bottom: 10px;
+}
+
+.orderItems select {
+  background-color: #ffe8e4;
+  border: 1px solid tomato;
+  width: max(10vw, 120px);
+  padding: 10px;
+  outline: none;
+}
+
+@media screen and (max-width: 1000px) {
+  .orderItems {
+    font-size: 12px;
+    grid-template-columns: 0.5fr 2fr 1fr;
+    padding: 15px 8px;
+  }
+  .orderItems select {
+    padding: 5px;
+    font-size: 12px;
+  }
+  .orderItems img {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .orderItems {
+    font-size: 12px;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 5px;
+  }
+  .orderItems select {
+    padding: 3px;
+    width: 96px;
+    font-size: 9px;
+  }
+}
